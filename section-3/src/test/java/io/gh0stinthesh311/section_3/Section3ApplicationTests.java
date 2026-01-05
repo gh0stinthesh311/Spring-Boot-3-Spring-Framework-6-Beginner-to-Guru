@@ -13,6 +13,13 @@ class Section3ApplicationTests {
     @Autowired
     MyController myController;
 
+    // We are asking spring app for instance of controller, the autowiring is done by Spring automatically
+    @Test
+    void autowireOfController() {
+        System.out.println(myController.sayHello());
+    }
+
+    // We are asking to inject controller instance, same as above.
     @Test
     void getControllerFromCtx() {
         MyController myController = applicationContext.getBean(MyController.class);
@@ -23,3 +30,6 @@ class Section3ApplicationTests {
     void contextLoads() {
     }
 }
+
+
+

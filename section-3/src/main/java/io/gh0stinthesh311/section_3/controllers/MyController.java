@@ -1,18 +1,19 @@
 package io.gh0stinthesh311.section_3.controllers;
 
 import io.gh0stinthesh311.section_3.services.GreetingService;
+import io.gh0stinthesh311.section_3.services.GreetingServiceImpl;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
-//    private final GreetingService greetingService;
+    private final GreetingService greetingService;
 
-//    public MyController(GreetingService greetingService) {
-//        this.greetingService = greetingService;
-//    }
+    public MyController() {
+        this.greetingService = new GreetingServiceImpl();
+    }
 
     public String sayHello() {
         System.out.println("Inside controller");
-        return "hi";
+        return greetingService.sayGreeting();
     }
 }
